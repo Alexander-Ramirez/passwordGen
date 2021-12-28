@@ -1,5 +1,9 @@
 // Assignment Code
 let generateBtn = document.querySelector("#generate");
+let loweralphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+let upperAlphabet = "abcdefghijklmnopqrstuvwxyz".toUpperCase.split("");
+let specialCharaters = "`~!@#$%^&*,./?=+".split("")
+let numbers = "0123456789".split("")
 let selectedArrays = [];
 
 // Write password to the #password input
@@ -14,9 +18,6 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-let loweralphabet = "abcdefghijklmnopqrstuvwxyz".split("");
-
-let upperAlphabet = "abcdefghijklmnopqrstuvwxyz".toUpperCase.split("");
 
 let randomNumber = Math.floor(Math.random()*upperAlphabet.length);
 
