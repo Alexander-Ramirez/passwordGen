@@ -4,7 +4,6 @@ let loweralphabet = "abcdefghijklmnopqrstuvwxyz".split("");
 let upperAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 let specialCharaters = "`~!@#$%^&*,./?=+".split("")
 let numbers = "0123456789".split("")
-let randomArray = [];
 
 // Write password to the #password input
 function writePassword() {
@@ -17,7 +16,8 @@ function writePassword() {
 
 function generatePassword() {
   let selectedArrays = [];
-  
+  let passwordFinal = "";
+
   let passwordCharaterLength = prompt("Choose btween 8 and 128 charaters for your password");
   if (!passwordCharaterLength) {
     alert("Please enter a value");
@@ -44,14 +44,12 @@ function generatePassword() {
     selectedArrays = [...numbers, ...selectedArrays]
   };
   
-  let password = "";
-  
-  for (let i = 0; i < passwordlength; i++) {
-    let randomNumber = Math.floor(Math.random()*selectedArrays.length);
-    password = password + selectedArrays[randomNumber];
+  for (let i = 0; i < passwordCharaterLength; i++) {
+    let numberRandom = Math.floor(Math.random()*selectedArrays.length);
+    passwordFinal = passwordFinal + selectedArrays[numberRandom];
   }
 
-  return password;
+  return passwordFinal;
 };
 
 // Add event listener to generate button
